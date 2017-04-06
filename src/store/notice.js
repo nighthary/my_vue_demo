@@ -18,8 +18,15 @@ const getters = {
   }
 }
 
+const actions = {
+  TAB_HOME_INDEX ({commit}, homeTabIndex) {
+    commit(types.TAB_HOME_INDEX, homeTabIndex)
+  }
+}
+
 export default {
   state: state,
   mutations: mutations,
-  getters: getters
+  getters: getters,
+  actions: actions
 }

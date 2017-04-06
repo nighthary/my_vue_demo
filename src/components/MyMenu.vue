@@ -73,7 +73,6 @@
 </template>
 
 <script>
-  import {mapGetters, mapActions} from 'vuex'
   export default {
     name: 'mymenu',
     data () {
@@ -89,6 +88,7 @@
     },
     methods: {
       tabClick (clickIndex) {
+        this.$store.dispatch('TAB_HOME_INDEX', clickIndex)
         switch (clickIndex) {
           case 1:
             this.$router.push({
@@ -111,7 +111,6 @@
             })
             break
         }
-        this.$store.commit('TAB_HOME_INDEX', clickIndex)
       }
     }
   }

@@ -1,6 +1,6 @@
 
 import * as types from './mutation-type'
 
-export const changeTabIndex = ({commit}, options) => {
-  commit(types.TAB_HOME_INDEX, options)
+export const TAB_HOME_INDEX = ({commit}, homeTabIndex) => {
+  commit(types.TAB_HOME_INDEX, homeTabIndex)
 }
