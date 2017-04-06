@@ -1,13 +1,18 @@
 <template lang="html">
   <div id="promotions">
       活动
+      <MyMenu></MyMenu>
   </div>
 </template>
 
 <script>
-export default {
-  name: "promotions"
-}
+  import MyMenu from '../components/MyMenu'
+  export default {
+    name: 'promotions',
+    components: {
+      MyMenu
+    }
+  }
 </script>
 
 <style lang="css">

@@ -43,12 +43,15 @@
 
 <script>
 import Conf from '../util/conf'
+import GoodsDetail from '../components/GoodsDetail'
 
 export default {
   name: 'recommend',
   data() {
     return {
       lists: [],
+      pageIndex:0,
+      pageSize:5,
       showLoading: true
     }
   },
@@ -61,8 +64,8 @@ export default {
         url: Conf.baseURL + '/main/user/recommend',
         method: 'GET',
         params: {
-          pageIndex: 0,
-          pageSize: 100
+          pageIndex: this.pageIndex,
+          pageSize: this.pageSize
         }
       }).then((response) => {
         if (response && response.status === 200) {
@@ -79,12 +82,13 @@ export default {
     },
     goDetail(id) {
       this.$router.push({
-        path: 'cart'
+        path: '/goods-detail'
       });
-      // window.open('http://www.baidu.com?goodId=' + id)
     }
   },
-  components: {}
+  components: {
+    GoodsDetail
+  }
 }
 </script>
 <style lang="css">

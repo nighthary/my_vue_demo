@@ -1,9 +1,6 @@
 
 import * as types from './mutation-type'
 
-export const newNotice = ({commit}, options) => {
-  commit(types.NEW_NOTICE, options)
-}
-export const closeNotice = ({commit}) => {
-  commit(types.CLOSE_NOTICE)
+export const changeTabIndex = ({commit}, options) => {
+  commit(types.TAB_HOME_INDEX, options)
 }

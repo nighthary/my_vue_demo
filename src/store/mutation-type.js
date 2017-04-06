@@ -1,2 +1,1 @@
-export const NEW_NOTICE = 'NEW_NOTICE'
-export const CLOSE_NOTICE = 'CLOSE_NOTICE'
+export const TAB_HOME_INDEX = 'TAB_HOME_INDEX'

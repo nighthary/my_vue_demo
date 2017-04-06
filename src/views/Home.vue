@@ -323,7 +323,7 @@
       </div>
     </div>
     <div class="featured row gutter-no lazyload" id="featured">
-      <div v-for="(car, index) in cars" class="cars-item" :class="index == 0 ? 'col-33A border-b' : 'col-33 border-r'" :data-url="car.href" :data-type="car.type">
+      <div v-for="(car, index) in cars" @click="goDetail()" class="cars-item" :class="index == 0 ? 'col-33A border-b' : 'col-33 border-r'" :data-url="car.href" :data-type="car.type">
         <div class="hotCat">
           <div class="img-wrap lazyload">
             <img :src="car.img" />
@@ -339,7 +339,7 @@
       <div class="more-recommend right" data-value="4"><span class="more-txt border-r h4">更多</span><span class="h4">专为你推荐</span><i class="icon icon-arrow-right-2"></i></div>
     </div>
     <div class="row gutter-no lazyload border-t" id="partsList">
-      <a v-for="(part, index) in parts" class="col-33 parts-item border-l border-b" :data-url="part.href" :data-type="part.type">
+      <a v-for="(part, index) in parts" @click="goDetail()" class="col-33 parts-item border-l border-b" :data-url="part.href" :data-type="part.type">
         <div class="parts-wrapper">
           <div class="img-wrap lazyload part-img-wrap">
             <img :src="part.img">
@@ -352,13 +352,14 @@
     </div>
   </div>
   <Recommend></Recommend>
+  <MyMenu></MyMenu>
 </div>
 </template>
 
 <script>
-// import { mapActions } from 'vuex'
 import Recommend from '../components/Recommend'
 import Conf from '../util/conf'
+import MyMenu from '../components/MyMenu'
 export default {
   name: 'home',
   data() {
@@ -369,7 +370,8 @@ export default {
     }
   },
   components: {
-    Recommend
+    Recommend,
+    MyMenu
   },
   created() {
     this.loadCars()
@@ -460,6 +462,11 @@ export default {
         arr[i].borderClass = itemClass
       }
       return arr;
+    },
+    goDetail() {
+      this.$router.push({
+        path: '/goods-detail'
+      });
     }
   }
 }

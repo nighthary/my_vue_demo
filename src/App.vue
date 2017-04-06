@@ -15,21 +15,16 @@
 
 <div id="app">
     <router-view></router-view>
-    <mymenu></mymenu>
 </div>
 
 </template>
 
 <script>
-
-import Home from './views/Home'
-import mymenu from './components/mymenu'
-export default {
+  import Home from './views/Home.vue'
+  export default {
     name: 'app',
     components: {
-        Home,
-        mymenu
+      Home
     }
-}
-
+  }
 </script>

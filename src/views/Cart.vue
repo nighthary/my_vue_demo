@@ -1,13 +1,18 @@
 <template lang="html">
   <div id="cart">
     购物车
+    <MyMenu></MyMenu>
   </div>
 </template>
 
 <script>
-export default {
-  name: "cart"
-}
+  import MyMenu from '../components/MyMenu'
+  export default {
+    name: 'cart',
+    components: {
+      MyMenu
+    }
+  }
 </script>
 
 <style lang="css">

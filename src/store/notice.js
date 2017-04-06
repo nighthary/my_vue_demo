@@ -3,23 +3,23 @@ import * as types from './mutation-type'
 
 const state = {
   show: false,
-  options: {
-    autoClose: false,
-    content: 'notice content'
-  }
+  homeTabIndex: 1
 }
 
 const mutations = {
-  [types.NEW_NOTICE] (state, options) {
-    state.show = true
-    state.options = options
-  },
-  [types.CLOSE_NOTICE] (state, options) {
-    state.show = false
-    state.options = options
+  [types.TAB_HOME_INDEX] (state, homeTabIndex) {
+    state.homeTabIndex = homeTabIndex
   }
 }
+
+const getters = {
+  homeTabIndex: state => {
+    return state.homeTabIndex
+  }
+}
+
 export default {
   state: state,
-  mutations: mutations
+  mutations: mutations,
+  getters: getters
 }
