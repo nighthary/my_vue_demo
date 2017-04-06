@@ -2,6 +2,7 @@
 <template>
 <div id="goodsDetail">
   <MyHeader title="我是商品详情"></MyHeader>
+  {{ goodsId }}
 </div>
 </template>
 
@@ -9,13 +10,9 @@
 import MyHeader from '../components/MyHeader'
 export default {
   name: 'goodsDetail',
-  data() {
+  data () {
     return {
     }
-  },
-  created() {
-  },
-  methods: {
   },
   components: {
     MyHeader

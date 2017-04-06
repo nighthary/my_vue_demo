@@ -82,7 +82,10 @@ export default {
     },
     goDetail(id) {
       this.$router.push({
-        path: '/goods-detail'
+        path: '/goods-detail',
+        params: {
+          goodsId:id
+        }
       });
     }
   },

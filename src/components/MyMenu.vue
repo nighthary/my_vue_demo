@@ -88,6 +88,7 @@
     },
     methods: {
       tabClick (clickIndex) {
+        //分发修改TAB_INDEX的事件
         this.$store.dispatch('TAB_HOME_INDEX', clickIndex)
         switch (clickIndex) {
           case 1:
